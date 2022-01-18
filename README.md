@@ -1,7 +1,8 @@
 <br />
 <p align="center">
   <a>
-     <img src= alt="Logo" >
+     <img src="https://user-images.githubusercontent.com/43582900/150030371-38fd3d2c-c58b-4a5e-b4fa-b66837e78305.png"
+ alt="Logo" >
   </a>
 
   <h3 align="center">BackEnd Store EGFWD Second Project </h3>
