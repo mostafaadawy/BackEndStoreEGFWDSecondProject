@@ -42,7 +42,7 @@ This project is a storefront backend API that I made as part of my Full Stack De
 ## Lets Start
 - simply lets git clone our repo as the first step 
 ```sh
-git clone ---------------------
+git clone https://github.com/mostafaadawy/BackEndStoreEGFWDSecondProject.git
 ```
 - install our packages in one command while i will explain the need of use of every single code
 ```sh
