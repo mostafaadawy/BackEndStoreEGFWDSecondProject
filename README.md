@@ -500,10 +500,35 @@ other issue is to use expiration of token after short time
 - and it can also be solved where every table of action should havew user_id 
 so before we do any action we can check first the user_id if match the token decoded id
 ## Udacity Review and Modifications, Acceptance
-  - acording to the reviion [link](https://review.udacity.com/#!/reviews/3376702) the requirent after revision as follows
-    - add for every async wait ----> try catch
-    - add functionality test to some unit test such as index in userSpec or productSpec
-    - remove the auth required for index and show  while leave it as it for other end points
+- acording to the reviion [link](https://review.udacity.com/#!/reviews/3376702) the requirent after revision as follows
+  - add for every async wait ----> try catch
+  - add functionality test to some unit test such as index in userSpec or productSpec
+  - remove the auth required for index and show  while leave it as it for other end points
+- recommended reading:
+  - [readme](https://www.mygreatlearning.com/blog/readme-file/)
+  - [Role of Package json](https://stackoverflow.com/questions/44297803/what-is-the-role-of-the-package-lock-json#:~:text=the%20npm%20docs%3A-,package%2Dlock.,regardless%20of%20intermediate%20dependency%20updates.)
+  - [HTTP METHODS](https://nordicapis.com/ultimate-guide-to-all-9-standard-http-methods/)
+  - [relational database](https://aws.amazon.com/relational-database/#:~:text=A%20relational%20database%20is%20a,tables%20with%20columns%20and%20rows.&text=Each%20row%20in%20a%20table,made%20related%20using%20foreign%20keys.)
+  - [Data Types ](https://chartio.com/learn/databases/how-to-select-the-right-data-types/)
+  - [How to write complex select query](https://www.sqlshack.com/learn-sql-how-to-write-a-complex-select-query/)
+  - [database migrations](https://www.prisma.io/dataguide/types/relational/what-are-database-migrations#:~:text=Migrations%20help%20transition%20database%20schemas,structures%20in%20a%20programmatic%20way.)
+  - [Encryption](https://www.genetec.com/blog/cybersecurity/what-is-encryption-and-how-important-is-it#:~:text=It%20helps%20protect%20private%20information,be%20able%20to%20read%20it.)
+  - [node.js project architecture](https://softwareontheroad.com/ideal-nodejs-project-structure/)
+  - [data modeling](https://www.linkedin.com/pulse/why-data-modelling-important-munish-goswami/)
+  - [types vs interfaces typescripts](https://blog.logrocket.com/types-vs-interfaces-in-typescript/)
+  - [enviroment variable](https://medium.com/dubizzletechblog/managing-environment-variables-in-nodejs-and-modern-js-apps-608003f4686c)
+  - [getignore protecting api keys](https://dev.to/eprenzlin/env-gitignore-and-protecting-api-keys-2b9l)
+  - [jasmine](https://jasmine.github.io/tutorials/custom_reporter)
+  - [jasmine 2](https://jasmine.github.io/2.1/introduction#:~:text=The%20beforeAll%20function%20is%20called,with%20expensive%20setup%20and%20teardown.)
+  - [endpoint unit testing with supertest and jest](https://zellwk.com/blog/endpoint-testing/)
+  - [token](https://auth0.com/learn/token-based-authentication-made-easy/)
+  - [token base easy](https://auth0.com/learn/token-based-authentication-made-easy/)
+  - [after all jasmine](https://www.tabnine.com/code/javascript/functions/jasmine/afterAll)
+  - [before all jasmine](https://www.tabnine.com/code/javascript/functions/jasmine/beforeAll)
+  - [what is postgres and why](https://www.postgresql.org/about/#:~:text=Why%20use%20PostgreSQL%3F,big%20or%20small%20the%20dataset.)
+  - [Debugging a Node.js Express API in VSCode ](https://www.moesif.com/blog/technical/debugging/debugging-nodejs-api-with-vscode/)
+
+
 ## Contact
 
 # [GitHub](https://github.com/mostafaadawy). [FaceBook](https://web.facebook.com/mostafa.adawy.96/). [Mail](mailto:mostafa_adawy@ymail.com). [LinkedIn](https://www.linkedin.com/in/mostafaamsadawy/)
