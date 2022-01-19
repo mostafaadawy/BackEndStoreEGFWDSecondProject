@@ -14,10 +14,9 @@ app.get("/", function (req: Request, res: Response) {
   res.send("Welcome to the second project !")
 })
 URoutes(app)
+PRoutes(app)
 DRoutes(app)
 ORoutes(app)
-PRoutes(app)
-
 app.listen(3000, function () {
   console.log(`starting app on: ${address}`)
 })

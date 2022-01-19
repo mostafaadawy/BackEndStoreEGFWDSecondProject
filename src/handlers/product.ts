@@ -33,7 +33,6 @@ const create = async (req: Request, res: Response) => {
     })
     res.json({ status: "sucess", data: r })
   } catch (e) {
-    console.log(e)
     res.status(500).json("server error")
   }
 }
@@ -63,12 +62,11 @@ const destroy = async (req: Request, res: Response) => {
   }
 }
 const PRoutes = (app: Application) => {
-  app.use(middlewares)
   app.get("/products", index)
   app.get("/products/:id", show)
-  app.put("/products", update)
-  app.post("/products", create)
-  app.delete("/products", destroy)
+  app.put("/products", middlewares, update)
+  app.post("/products", middlewares, create)
+  app.delete("/products", middlewares, destroy)
 }
 
 export default PRoutes

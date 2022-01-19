@@ -39,6 +39,10 @@ describe("Testing Product Model", () => {
       const temp = await Store.update({ id: 1, productname: "p1name", price: 15, category: "black-end" })
       expect(temp.category).toBe("black-end")
     })
+    it("Index method should return products list", async () => {
+      const temp = await Store.index()
+      expect(temp.length).toBe(2)
+    })
     it("Show method should return one product info", async () => {
       const temp = await Store.show(1)
       expect(temp.category).toBe("black-end")

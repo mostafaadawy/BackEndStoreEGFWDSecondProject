@@ -9,29 +9,26 @@ describe("Testing services APIs Endpoints", () => {
   beforeAll(async () => {
     await prepareUser()
     keyToken = await getUserToken()
-      for (let i = 0; i < 10; i++) {
-        await req
-          .post("/products")
-          .set("Authorization", `Bearer ${keyToken}`)
-          .send({ productname: `prod-${i}`, price: i * 200, category: `category-${i}` })
-      }
+    for (let i = 0; i < 10; i++) {
+      await req
+        .post("/products")
+        .set("Authorization", `Bearer ${keyToken}`)
+        .send({ productname: `prod-${i}`, price: i * 200, category: `category-${i}` })
+    }
 
-      for (let i = 0; i < 5; i++) {
-        await req
-          .post("/orders")
-          .set("Authorization", `Bearer ${keyToken}`)
-          .send({ order_status: "active", user_id: 1 })
-        await req
-          .post("/orders")
-          .set("Authorization", `Bearer ${keyToken}`)
-          .send({ order_status: "completed", user_id: 1 })
-      }
-      for (let i = 0; i < 7; i++) {
-        await req
-          .post(`/orders/${i}/products`)
-          .set("Authorization", `Bearer ${keyToken}`)
-          .send({ product_id: i, quantity: i * 15 })
-      }
+    for (let i = 0; i < 5; i++) {
+      await req.post("/orders").set("Authorization", `Bearer ${keyToken}`).send({ order_status: "active", user_id: 1 })
+      await req
+        .post("/orders")
+        .set("Authorization", `Bearer ${keyToken}`)
+        .send({ order_status: "completed", user_id: 1 })
+    }
+    for (let i = 0; i < 7; i++) {
+      await req
+        .post(`/orders/${i}/products`)
+        .set("Authorization", `Bearer ${keyToken}`)
+        .send({ product_id: i, quantity: i * 15 })
+    }
   })
   afterAll(async () => {
     await crud("DELETE FROM order_products;\nALTER SEQUENCE order_products_id_seq RESTART WITH 1;", [], "error")

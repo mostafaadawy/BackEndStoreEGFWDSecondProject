@@ -47,6 +47,11 @@ describe("Testing User Model", () => {
       const temp = await Store.authen("test@mail.com", "pass")
       expect(temp?.firstname).toBe("fname")
     })
+    it("Index should return no of saved users", async () => {
+      const temp = await Store.index()
+      expect(temp.length).toBe(2)
+    })
+    
     it("Update method should return new user info", async () => {
       const temp = await Store.update({
         id: 1,

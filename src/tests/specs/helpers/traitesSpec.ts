@@ -1,4 +1,4 @@
-import { crud, hashingKey,isSameKey,generateToken,prepareUser,getUserToken } from "../../../helpers/traites"
+import { crud, hashingKey, isSameKey, generateToken, prepareUser, getUserToken } from "../../../helpers/traites"
 
 describe("Testing traites different methods that can be used as helpers ", () => {
   describe("are all of the needed helping functions defined", () => {
@@ -15,10 +15,10 @@ describe("Testing traites different methods that can be used as helpers ", () =>
       expect(generateToken).toBeDefined()
     })
     it("Is creating user for testing function is defined", () => {
-        expect(prepareUser).toBeDefined()
-      })
+      expect(prepareUser).toBeDefined()
+    })
     it("Is logging and getting token function is defined", () => {
-        expect(getUserToken).toBeDefined()
+      expect(getUserToken).toBeDefined()
     })
   })
 })

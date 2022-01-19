@@ -31,7 +31,6 @@ const create = async (req: Request, res: Response) => {
     })
     res.json({ status: "sucess", data: r })
   } catch (e) {
-    console.log(e)
     res.status(500).json("server error")
   }
 }

@@ -500,7 +500,10 @@ other issue is to use expiration of token after short time
 - and it can also be solved where every table of action should havew user_id 
 so before we do any action we can check first the user_id if match the token decoded id
 ## Udacity Review and Modifications, Acceptance
-  - 
+  - acording to the reviion [link](https://review.udacity.com/#!/reviews/3376702) the requirent after revision as follows
+    - add for every async wait ----> try catch
+    - add functionality test to some unit test such as index in userSpec or productSpec
+    - remove the auth required for index and show  while leave it as it for other end points
 ## Contact
 
 # [GitHub](https://github.com/mostafaadawy). [FaceBook](https://web.facebook.com/mostafa.adawy.96/). [Mail](mailto:mostafa_adawy@ymail.com). [LinkedIn](https://www.linkedin.com/in/mostafaamsadawy/)

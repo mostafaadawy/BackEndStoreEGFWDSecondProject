@@ -5,28 +5,40 @@ import middlewares from "../middlewares"
 const servModel = new DashboardModel()
 
 const categoryFilterProduct = async (req: Request, res: Response) => {
-  if (req.body.category === undefined)
-    return res.status(404).send("Error: should be post and body should include category")
-  const r = await servModel.categoryFilterProduct(req.body.category)
-  res.json({ status: "success", data: r }).status(200)
+  try {
+    if (req.body.category === undefined)
+      return res.status(404).send("Error: should be post and body should include category")
+    const r = await servModel.categoryFilterProduct(req.body.category)
+    res.json({ status: "success", data: r }).status(200)
+  } catch (e) {
+    return res.json({ status: "failed", data: e }).status(500)
+  }
 }
 
 const userCompltedOrders = async (req: Request, res: Response) => {
-  if (req.body.user_id === undefined)
-    return res.status(404).send("Error: should be post and body should include user_id")
-  if (parseInt(req.body.decoded_id) !== parseInt(req.body.user_id)) return res.status(401).send("defferent user ids")
-  const r = await servModel.userCompltedOrders(req.body.user_id)
-  if (r[0] === undefined) return res.status(200).send("this user_id has nothing recorded")
-  res.json(r).status(200)
+  try {
+    if (req.body.user_id === undefined)
+      return res.status(404).send("Error: should be post and body should include user_id")
+    if (parseInt(req.body.decoded_id) !== parseInt(req.body.user_id)) return res.status(401).send("defferent user ids")
+    const r = await servModel.userCompltedOrders(req.body.user_id)
+    if (r[0] === undefined) return res.status(200).send("this user_id has nothing recorded")
+    res.json(r).status(200)
+  } catch (e) {
+    return res.json({ status: "failed", data: e }).status(500)
+  }
 }
 
 const userActiveOrders = async (req: Request, res: Response) => {
-  if (req.body.user_id === undefined)
-    return res.status(404).send("Error: should be post and body should include user_id")
-  if (parseInt(req.body.decoded_id) !== parseInt(req.body.user_id)) return res.status(401).send("defferent user ids")
-  const r = await servModel.userActiveOrders(req.body.user_id)
-  if (r[0] === undefined) return res.status(200).send("this user_id has nothing recorded")
-  res.json(r)
+  try {
+    if (req.body.user_id === undefined)
+      return res.status(404).send("Error: should be post and body should include user_id")
+    if (parseInt(req.body.decoded_id) !== parseInt(req.body.user_id)) return res.status(401).send("defferent user ids")
+    const r = await servModel.userActiveOrders(req.body.user_id)
+    if (r[0] === undefined) return res.status(200).send("this user_id has nothing recorded")
+    res.json(r)
+  } catch (e) {
+    return res.json({ status: "failed", data: e }).status(500)
+  }
 }
 
 const top5Products = async (_req: Request, res: Response) => {
@@ -34,8 +46,7 @@ const top5Products = async (_req: Request, res: Response) => {
     const t5 = await servModel.top5Products()
     res.json({ status: "sucess", data: t5 })
   } catch (e) {
-    console.log(e)
-    res.status(500).json("server error")
+    return res.json({ status: "failed", data: e }).status(500)
   }
 }
 
